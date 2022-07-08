@@ -1,6 +1,6 @@
 Class {
 	#name : #BaselineOfOpalSimdBytecode,
-	#superclass : #Object,
+	#superclass : #BaselineOf,
 	#category : #BaselineOfOpalSimdBytecode
 }
 
