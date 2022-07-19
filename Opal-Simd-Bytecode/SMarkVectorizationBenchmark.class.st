@@ -18,7 +18,7 @@ SMarkVectorizationBenchmark class >> benchmarkParameters [
 
 { #category : #benchmarking }
 SMarkVectorizationBenchmark class >> defaultProblemSize [
-	^ 1000000
+	^ 4194304 "2^22"
 ]
 
 { #category : #'as yet unclassified' }
@@ -110,4 +110,16 @@ SMarkVectorizationBenchmark >> benchAddFloat64Vector [
 	a to: limit do: [ :_ |
 		ArithmeticArrayOperations new addFloat64Vector: x with: y intoVector: z.
 	].
+]
+
+{ #category : #benchmarking }
+SMarkVectorizationBenchmark >> problemSize [
+
+	"Hint for the OMOP that it is part of the meta infrastructure"
+
+	<omniUnenforced>
+	| baseProblemSize problemSize |
+	baseProblemSize := super problemSize.
+	problemSize := baseProblemSize / arraySize.
+	^ problemSize
 ]
