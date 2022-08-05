@@ -11,17 +11,17 @@ Class {
 SMarkVectorizationBenchmark class >> benchmarkParameters [
 
 	^ ParametrizedTestMatrix new
-		  forSelector: #arraySize addOptions: #( 2 8 32 128 512 2048 "2KiB" 8192 "8KiB" 32768 "32KiB" 131072 "128KiB" 524288 "512KiB" 2097152 "2MiB" );
+		  forSelector: #arraySize addOptions: #(8 32 128 512 2048 "2KiB" 8192 "8KiB" 32768 "32KiB" 131072 "128KiB" 524288 "512KiB" 2097152 "2MiB");
 		"TODO: puchito escalar"
 		  yourself
 ]
 
 { #category : #benchmarking }
 SMarkVectorizationBenchmark class >> defaultProblemSize [
-	^ 4194304 "2^22"
+	^ "128"67108864 "2^26"
 ]
 
-{ #category : #'as yet unclassified' }
+{ #category : #benchmarking }
 SMarkVectorizationBenchmark class >> runBenchmark [
 
 	<script>
@@ -35,6 +35,20 @@ SMarkVectorizationBenchmark class >> runBenchmark [
 		{ result key. (result value collect: [ :i | i total ]) } flattened].
 	(NeoCSVWriter on: csvStream) nextPutAll: csvLines.
 	csvStream close.
+]
+
+{ #category : #benchmarking }
+SMarkVectorizationBenchmark >> benchAddFloat32Primitive [
+	| a limit x y z |
+	x := Float32Array withAll: (1.0 to: arraySize).
+	y := Float32Array withAll: (x collect: [:i | i * 10]).
+	z := Float32Array new: x size.
+	
+	a := 1.
+	limit := self problemSize.
+	a to: limit do: [ :_ |
+		ArithmeticArrayOperations new addFloat32VectorPrimitive: x with: y intoVector: z.
+	].
 ]
 
 { #category : #benchmarking }
@@ -80,7 +94,7 @@ SMarkVectorizationBenchmark >> benchAddFloat64Primitive [
 	a := 1.
 	limit := self problemSize.
 	a to: limit do: [ :_ |
-		ArithmeticArrayOperations new addVectorPrimitive: x with: y intoVector: z.
+		ArithmeticArrayOperations new addFloat64VectorPrimitive: x with: y intoVector: z.
 	].
 ]
 
