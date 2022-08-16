@@ -1,7 +1,7 @@
 Class {
 	#name : #ArithmeticArrayOperations,
 	#superclass : #Object,
-	#category : #'Opal-Simd-Bytecode'
+	#category : #'Opal-Simd-Bytecode-Tests'
 }
 
 { #category : #adding }
