@@ -4,7 +4,7 @@ Class {
 	#instVars : [
 		'arraySize'
 	],
-	#category : #'Opal-Simd-Bytecode-Tests'
+	#category : #'Opal-Simd-Bytecode-Benchmarks'
 }
 
 { #category : #benchmarking }
