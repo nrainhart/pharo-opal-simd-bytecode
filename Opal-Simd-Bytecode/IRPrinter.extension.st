@@ -1,6 +1,12 @@
 Extension { #name : #IRPrinter }
 
 { #category : #'*Opal-Simd-Bytecode' }
+IRPrinter >> visitAddAcrossFloat32Vector: addVector [
+	  
+	stream nextPutAll: 'addAcrossFloat32Vector'
+]
+
+{ #category : #'*Opal-Simd-Bytecode' }
 IRPrinter >> visitAddFloat32Vector: addVector [
 	  
 	stream nextPutAll: 'addFloat32Vector'
@@ -13,7 +19,19 @@ IRPrinter >> visitAddFloat64Vector: addVector [
 ]
 
 { #category : #'*Opal-Simd-Bytecode' }
+IRPrinter >> visitMulFloat32Vector: addVector [
+	  
+	stream nextPutAll: 'mulFloat32Vector'
+]
+
+{ #category : #'*Opal-Simd-Bytecode' }
 IRPrinter >> visitPushFloat32ArrayToRegister: pushArrayToRegister [
+	  
+	stream nextPutAll: 'pushFloat32ArrayToRegister'
+]
+
+{ #category : #'*Opal-Simd-Bytecode' }
+IRPrinter >> visitPushFloat32RegisterElement: pushRegisterElement [
 	  
 	stream nextPutAll: 'pushFloat32ArrayToRegister'
 ]

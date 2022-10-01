@@ -1,6 +1,12 @@
 Extension { #name : #IRBuilder }
 
 { #category : #'*Opal-Simd-Bytecode' }
+IRBuilder >> addAcrossFloat32Vector [
+
+	self add: (IRInstruction addAcrossFloat32Vector)
+]
+
+{ #category : #'*Opal-Simd-Bytecode' }
 IRBuilder >> addFloat32Vector [
 
 	self add: (IRInstruction addFloat32Vector)
@@ -13,9 +19,21 @@ IRBuilder >> addFloat64Vector [
 ]
 
 { #category : #'*Opal-Simd-Bytecode' }
+IRBuilder >> mulFloat32Vector [
+
+	self add: (IRInstruction mulFloat32Vector)
+]
+
+{ #category : #'*Opal-Simd-Bytecode' }
 IRBuilder >> pushFloat32ArrayToRegister [
 
 	self add: (IRInstruction pushFloat32ArrayToRegister)
+]
+
+{ #category : #'*Opal-Simd-Bytecode' }
+IRBuilder >> pushFloat32RegisterElement [
+
+	self add: (IRInstruction pushFloat32RegisterElement)
 ]
 
 { #category : #'*Opal-Simd-Bytecode' }

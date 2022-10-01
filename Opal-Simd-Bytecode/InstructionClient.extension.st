@@ -1,6 +1,11 @@
 Extension { #name : #InstructionClient }
 
 { #category : #'*Opal-Simd-Bytecode' }
+InstructionClient >> addAcrossFloat32Vector [
+	
+]
+
+{ #category : #'*Opal-Simd-Bytecode' }
 InstructionClient >> addFloat32Vector [
 	
 ]
@@ -11,7 +16,17 @@ InstructionClient >> addFloat64Vector [
 ]
 
 { #category : #'*Opal-Simd-Bytecode' }
+InstructionClient >> mulFloat32Vector [
+	
+]
+
+{ #category : #'*Opal-Simd-Bytecode' }
 InstructionClient >> pushFloat32ArrayToRegister [
+	
+]
+
+{ #category : #'*Opal-Simd-Bytecode' }
+InstructionClient >> pushFloat32RegisterElement [
 	
 ]
 

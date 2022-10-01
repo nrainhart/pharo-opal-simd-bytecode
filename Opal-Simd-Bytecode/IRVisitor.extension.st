@@ -1,6 +1,10 @@
 Extension { #name : #IRVisitor }
 
 { #category : #'*Opal-Simd-Bytecode' }
+IRVisitor >> visitAddAcrossFloat32Vector: anIRAddVector [
+]
+
+{ #category : #'*Opal-Simd-Bytecode' }
 IRVisitor >> visitAddFloat32Vector: anIRAddVector [
 ]
 
@@ -9,7 +13,15 @@ IRVisitor >> visitAddFloat64Vector: anIRAddVector [
 ]
 
 { #category : #'*Opal-Simd-Bytecode' }
+IRVisitor >> visitMulFloat32Vector: anIRAddVector [
+]
+
+{ #category : #'*Opal-Simd-Bytecode' }
 IRVisitor >> visitPushFloat32ArrayToRegister: pushArrayToRegister [
+]
+
+{ #category : #'*Opal-Simd-Bytecode' }
+IRVisitor >> visitPushFloat32RegisterElement: pushRegisterElement [
 ]
 
 { #category : #'*Opal-Simd-Bytecode' }
